@@ -1,0 +1,13 @@
+" Creating the createElement and nesting them in to print the name of the array."
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+const people = [{ name: "Aman" }, { name: "Himan" }, { name: "Ankit" }];
+const element = React.createElement(
+  "ol",
+  null,
+  people.map((person) => React.createElement("li", {key:person.name}, person.name))
+);
+console.log(element);
+ReactDOM.render(element, document.getElementById("root"));
